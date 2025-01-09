@@ -12,9 +12,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
+import { Tenant } from 'api/tenants/types';
 
-import { Tenant } from "../api/tenants/types";
-
-export function getTenantsObjectsForIds(tenantsFromStore: Tenant[], tenantIds: string[]): Tenant[] {
-	return tenantsFromStore.filter((tenant) => tenantIds.includes(tenant.tenantId));
+export function getTenantsObjectsForIds(
+  tenantsFromStore: Tenant[],
+  tenantIds: string[],
+): Tenant[] {
+  return tenantsFromStore.filter((tenant) =>
+    tenantIds.includes(tenant.tenantId),
+  );
 }

@@ -1,0 +1,101 @@
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+.alert {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.alert ul {
+  padding: 0px 18px;
+}
+.alert > span {
+  display: flex;
+  padding: 1px 8px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+.alert > div {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+}
+.alert.primary {
+  border-radius: 6px;
+  border: 1px solid #e37a3f;
+  background: rgba(227, 122, 63, 0.1);
+}
+.alert.primary > span {
+  background: #e37a3f;
+  color: #fff;
+}
+.alert.primary > div {
+  color: #a44915;
+}
+.alert.primary a {
+  color: #a44915;
+  font-weight: 500;
+}
+.alert.primary code {
+  padding: 2px;
+  background: rgba(227, 122, 63, 0.1);
+  border: 1px solid rgba(227, 122, 63, 0.2);
+  border-radius: 4px;
+  font-size: 12px;
+}
+.alert.secondary {
+  border-radius: 6px;
+  border: 1px solid #0062e1;
+  background: rgba(0, 98, 225, 0.05);
+}
+.alert.secondary > span {
+  background: #0062e1;
+  color: #fff;
+}
+.alert.secondary > div {
+  color: #104993;
+}
+.alert.secondary a {
+  color: #007aff;
+  font-weight: 500;
+}
+.alert.secondary code {
+  padding: 2px;
+  background: rgba(0, 98, 225, 0.1);
+  border: 1px solid rgba(0, 98, 225, 0.2);
+  border-radius: 4px;
+  font-size: 12px;
+}
+.alert.sm {
+  padding: 20px 14px;
+}
+.alert a:hover {
+  background: transparent !important;
+}
+
+@media (max-width: 425px) {
+  .alert {
+    padding: 24px 14px;
+  }
+}/*# sourceMappingURL=alert.css.map */

@@ -12,59 +12,57 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-
-import { Link, useLocation } from "react-router-dom";
-
-import { ReactComponent as PermissionsIcon } from "../../../assets/roles-and-permissions.svg";
-import { ReactComponent as TenantManagementIcon } from "../../../assets/tenant-management.svg";
-import { ReactComponent as UserManagementIcon } from "../../../assets/user-managment.svg";
-
-import "./sidebar.scss";
+import { Link, useLocation } from 'react-router-dom';
+import { rolesAndPermissions as PermissionsIcon } from 'assets';
+import { tenantManagement as TenantManagementIcon } from 'assets';
+import { userManagement as UserManagementIcon } from 'assets';
+import './sidebar.scss';
 
 const sidebarItems = [
-	{
-		id: "user-management",
-		title: "User Management",
-		href: "/",
-		icon: <UserManagementIcon />,
-	},
-	{
-		id: "roles-and-permissions",
-		title: "Roles and Permissions",
-		href: "/roles",
-		icon: <PermissionsIcon />,
-	},
-	{
-		id: "tenant-management",
-		title: "Tenant Management",
-		href: "/tenants",
-		icon: <TenantManagementIcon />,
-	},
+  {
+    id: 'user-management',
+    title: 'User Management',
+    href: '/',
+    icon: <UserManagementIcon />,
+  },
+  {
+    id: 'roles-and-permissions',
+    title: 'Roles and Permissions',
+    href: '/roles',
+    icon: <PermissionsIcon />,
+  },
+  {
+    id: 'tenant-management',
+    title: 'Tenant Management',
+    href: '/tenants',
+    icon: <TenantManagementIcon />,
+  },
 ];
 
 export function SideBarContent() {
-	const location = useLocation();
+  const location = useLocation();
 
-	return (
-		<ul className="sidebar-list">
-			{sidebarItems.map((item) => {
-				return (
-					<li key={item.id}>
-						<Link
-							className={`${location.pathname === item.href ? "active" : ""}`}
-							to={item.href}>
-							{item.icon} <span>{item.title}</span>
-						</Link>
-					</li>
-				);
-			})}
-		</ul>
-	);
+  return (
+    <ul className='sidebar-list'>
+      {sidebarItems.map((item) => {
+        return (
+          <li key={item.id}>
+            <Link
+              className={`${location.pathname === item.href ? 'active' : ''}`}
+              to={item.href}
+            >
+              {item.icon} <span>{item.title}</span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }
 export default function SideBar() {
-	return (
-		<aside className="sidebar">
-			<SideBarContent />
-		</aside>
-	);
+  return (
+    <aside className='sidebar'>
+      <SideBarContent />
+    </aside>
+  );
 }

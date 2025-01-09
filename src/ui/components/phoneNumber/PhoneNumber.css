@@ -1,0 +1,129 @@
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+.phone-display {
+  display: flex;
+  align-items: flex-start;
+}
+.phone-display > :not(:last-child) {
+  margin-right: 5px;
+}
+
+.phone-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+.phone-input__country-select {
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: normal;
+}
+.phone-input__country-select__current-value {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+  cursor: pointer;
+}
+.phone-input__country-select__current-value > :not(:last-child) {
+  margin-right: 8px;
+}
+.phone-input__country-select__current-value .PhoneInputCountryIcon img {
+  height: 14px;
+  box-shadow: 0px 0px 3px var(--color-shadow);
+}
+.phone-input__country-select__current-value .country-calling-code {
+  color: var(--color-black);
+}
+.phone-input__country-select__popup {
+  display: none;
+  position: relative;
+  position: fixed;
+  border-radius: 6px;
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 4px var(--color-shadow);
+  overflow-y: auto;
+}
+.phone-input__country-select__popup__option {
+  display: flex;
+  padding: 10px 12px;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+.phone-input__country-select__popup__option > :not(:last-child) {
+  margin-right: 12px;
+}
+.phone-input__country-select__popup__option .PhoneInputCountryIcon {
+  font-size: 14px;
+}
+.phone-input__country-select__popup__option .PhoneInputCountryIcon img {
+  height: 1em;
+  box-shadow: 0px 0px 4px var(--color-shadow);
+}
+.phone-input__country-select__popup__option .country-calling-code {
+  color: var(--color-secondary-text);
+}
+.phone-input__country-select__popup__option.selected {
+  background-color: var(--color-window-bg);
+  color: var(--color-link);
+  pointer-events: none;
+}
+.phone-input__country-select__popup__option.selected .country-calling-code {
+  color: var(--color-secondary-text);
+}
+.phone-input__country-select__popup__option:hover {
+  background-color: var(--color-window-bg);
+}
+.phone-input__country-select__popup.popup-active {
+  display: block;
+  z-index: var(--z-index-inline-popup);
+}
+.phone-input input.PhoneInputInput {
+  flex: 1 1 auto;
+  border-left: none;
+  overflow-x: hidden;
+  font-family: inherit;
+  display: block;
+  padding: 8px 12px 8px;
+  border: none;
+  outline: none;
+}
+
+.phone-input.PhoneInput--focus {
+  border-color: var(--color-primary);
+  box-shadow: 0px 0px 0px 2px var(--color-primary-opacity-40);
+}
+
+.phone-input.phone-input-error {
+  border-color: var(--color-error);
+  box-shadow: 0px 0px 0px 2px var(--color-error-shadow);
+}/*# sourceMappingURL=PhoneNumber.css.map */

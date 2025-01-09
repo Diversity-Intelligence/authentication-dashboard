@@ -1,0 +1,14 @@
+.input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+@media (max-width: 340px) {
+  .input {
+    flex-direction: column;
+  }
+}
+
+.input-field-container {
+  margin-bottom: 0 !important;
+}/*# sourceMappingURL=editableInput.css.map */

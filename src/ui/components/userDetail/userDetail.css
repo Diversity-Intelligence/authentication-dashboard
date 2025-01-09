@@ -1,0 +1,242 @@
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+.user-detail {
+  --badge-bg-color: rgb(197, 224, 253);
+  --copy-text-color: rgb(214, 80, 120);
+  padding: 72px 40px 48px;
+  max-width: var(--container-width);
+  margin: auto;
+}
+.user-detail.center-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-detail.center-children .subtitle {
+  font-size: 16px;
+  line-height: 26px;
+}
+.user-detail.center-children .back-button {
+  margin-top: 16px;
+  color: var(--color-link);
+  cursor: pointer;
+}
+.user-detail__header {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.user-detail__header > :not(:last-child) {
+  margin-right: 16px;
+}
+.user-detail__header__badge {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--badge-bg-color);
+  color: var(--color-link);
+}
+.user-detail__header__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.user-detail__header__info > :not(:last-child) {
+  margin-bottom: 6px;
+}
+.user-detail__header__title {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.user-detail__header__title span {
+  max-width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.user-detail__header__user-id {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.user-detail__header__user-id > :not(:last-child) {
+  margin-right: 8px;
+}
+.user-detail__header__user-id span {
+  white-space: nowrap;
+}
+.user-detail__header__user-id__text {
+  background-color: var(--color-white);
+  color: var(--copy-text-color);
+  border: 1px var(--color-border) solid;
+  display: inline-flex;
+  overflow: hidden;
+  max-width: 290px;
+  font-size: 14px;
+  font-family: "Source Code Pro";
+  font-weight: 500;
+}
+.user-detail__header__action {
+  display: flex;
+  align-items: center;
+}
+.user-detail .panel {
+  margin-top: 40px;
+}
+.user-detail__info-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 40px 60px;
+}
+.user-detail__info-grid__item {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-detail__info-grid__item__label {
+  color: var(--color-secondary-text);
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.user-detail__info-grid__item__body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  white-space: normal;
+  overflow: visible;
+}
+.user-detail__info-grid__item__guide {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+  width: 1em;
+  border: 1px solid var(--color-black);
+  border-radius: 50%;
+  margin-left: 6px;
+}
+.user-detail__info-grid__item__guide img {
+  height: 1em;
+}
+.user-detail__info-grid__item .input-field-container {
+  margin: 0px;
+}
+.user-detail__info-grid__item .email-verified-button {
+  margin-left: 12px;
+  font-weight: normal;
+}
+.user-detail__info-grid input,
+.user-detail__info-grid .phone-input {
+  background-color: var(--color-window-bg);
+}
+.user-detail__info-grid .input-field-error {
+  font-weight: normal;
+}
+.user-detail__provider-box {
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-copy-box);
+  background-color: var(--color-copy-box-bg);
+  width: 100%;
+}
+.user-detail__provider-box > :not(:last-child) {
+  margin-right: 6px;
+}
+.user-detail__provider-box.block-snippet {
+  border: none;
+  padding-right: 4px;
+}
+.user-detail__provider-box > span > img {
+  height: 1em;
+}
+.user-detail__provider-box__user-id {
+  flex: 1;
+  overflow-x: hidden;
+  padding: 4px 4px 4px 0px;
+}
+.user-detail__provider-box__user-id .copy-text {
+  width: 100%;
+}
+
+.user-detail-title {
+  font-size: 28px;
+  line-height: 34px;
+  color: var(--color-black);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.user-detail-subtitle {
+  color: var(--color-secondary-text);
+  margin-bottom: 48px;
+}
+
+.user-detail-paper {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  background-color: var(--color-white);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.user-detail .block-info-connection {
+  margin-bottom: 24px;
+}
+
+.pill {
+  margin-top: 4px;
+}
+
+@media (max-width: 425px) {
+  .user-detail {
+    padding: 72px 12px 48px;
+  }
+}/*# sourceMappingURL=userDetail.css.map */

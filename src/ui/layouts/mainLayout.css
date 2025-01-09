@@ -1,0 +1,16 @@
+.main-layout-container {
+  display: block;
+}
+.main-layout-container .main-content {
+  margin-top: 44px;
+  margin-left: var(--sidebar-width);
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .main-layout-container .main-content {
+    margin-left: 0;
+    padding: 0;
+  }
+}/*# sourceMappingURL=mainLayout.css.map */

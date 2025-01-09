@@ -1,0 +1,292 @@
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+.users-list-table-container {
+  padding: 24px 0px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.users-list-table {
+  width: 100%;
+  max-width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+.users-list-table thead {
+  color: var(--color-secondary-text);
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.users-list-table thead tr {
+  border-bottom: 1px solid var(--color-border);
+}
+.users-list-table thead tr th {
+  padding: 0 1em 24px 34px;
+  font-weight: 500;
+  text-align: left;
+  width: 33%;
+}
+
+.users-list-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+}
+.users-list-table tbody tr td {
+  width: 33%;
+  max-width: 50%;
+  padding: 24px 1em 24px 34px;
+}
+.users-list-table tbody tr.empty-row td {
+  padding: 12px 0;
+}
+
+.user-row:hover {
+  cursor: pointer;
+  background: rgb(242, 247, 253);
+}
+.user-row .user-info {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-secondary-text);
+  padding-right: 16px;
+}
+.user-row .user-info div {
+  max-width: 25ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.user-row .user-info div:not(:last-child) {
+  margin-bottom: 4px;
+}
+.user-row .user-info .main {
+  color: var(--color-black);
+  font-weight: 500;
+  cursor: pointer;
+}
+.user-row .user-date {
+  min-width: 110px;
+  white-space: nowrap;
+}
+.user-row.placeholder td div {
+  width: 100%;
+  background-color: var(--color-loader-placeholder-bg);
+  min-height: 1em;
+  opacity: 0.4;
+  animation: blinker 2s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.1;
+  }
+}
+.user-row .user-row-select-button {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  transition: 0.3s;
+}
+.user-row .user-row-select-button img {
+  width: 12px;
+  transition: transform 0.3s;
+}
+.user-row .user-row-select-button .img-hover {
+  display: none;
+}
+.user-row .user-row-select-menu {
+  cursor: pointer;
+}
+.user-row .user-row-select-menu .user-row-select-popup {
+  display: none;
+  z-index: var(--z-index-inline-popup);
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  padding: 20px 0 0px 0;
+}
+.user-row .user-row-select-menu .user-row-select-popup .panel {
+  padding: 8px;
+  min-width: 180px;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 8px;
+  font-weight: normal;
+  width: 100%;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item span {
+  white-space: nowrap;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item img {
+  width: 1em;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item .img-hover {
+  display: none;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item.delete {
+  color: var(--color-button-error-border);
+}
+.user-row .user-row-select-menu .user-row-select-popup-item:hover {
+  background-color: var(--color-popup-item-hover);
+}
+.user-row .user-row-select-menu .user-row-select-popup-item:hover .img-hover {
+  display: initial;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item:hover .img-normal {
+  display: none;
+}
+.user-row .user-row-select-menu .user-row-select-popup-item:hover.delete {
+  background-color: var(--color-popup-item-delete-hover);
+}
+.user-row .user-row-select-menu:hover .user-row-select-popup {
+  display: block;
+}
+.user-row .user-row-select-menu:hover .user-row-select-button {
+  border: 1px solid var(--color-primary);
+  box-shadow: 0px 0px 5px var(--color-primary);
+}
+.user-row .user-row-select-menu:hover .user-row-select-button img {
+  display: none;
+}
+.user-row .user-row-select-menu:hover .user-row-select-button .img-hover {
+  display: initial;
+  transform: rotateZ(180deg);
+}
+.user-row:last-of-type .user-row-select-popup {
+  top: -50%;
+  padding: 0px 40px 0px;
+}
+
+.user-list-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24px;
+  padding-right: 34px;
+  position: sticky;
+  left: 0px;
+}
+
+.users-list-pagination {
+  display: flex;
+}
+.users-list-pagination > :not(:last-child) {
+  margin-right: 1em;
+}
+.users-list-pagination .users-list-pagination-count {
+  font-weight: 500;
+}
+.users-list-pagination .users-list-pagination-navigation {
+  display: flex;
+}
+.users-list-pagination .users-list-pagination-navigation > :not(:last-child) {
+  margin-right: 0.5em;
+}
+.users-list-pagination .users-list-pagination-button {
+  border: none;
+  background: none;
+}
+
+.pill {
+  display: flex;
+  border-radius: 20px;
+  padding: 4px 8px;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+}
+.pill > :not(:last-child) {
+  margin-right: 4px;
+}
+.pill.passwordless {
+  color: var(--color-passwordless-text);
+  background-color: var(--color-passwordless-bg);
+}
+.pill.emailpassword {
+  color: var(--color-emailpassword-text);
+  background-color: var(--color-emailpassword-bg);
+}
+.pill.multiple {
+  color: var(--color-multiple-login-text);
+  background-color: var(--color-multiple-login-bg);
+}
+.pill.thirdparty {
+  color: var(--color-custom-provider-text);
+  background-color: var(--color-custom-provider-bg);
+  max-width: 25ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.pill.thirdparty .thirdparty-name {
+  max-width: 10ch;
+  text-overflow: inherit;
+  overflow: inherit;
+}
+.pill.thirdparty.google {
+  color: var(--color-google-text);
+  background-color: var(--color-google-bg);
+}
+.pill.thirdparty.google span {
+  text-transform: capitalize;
+}
+.pill.thirdparty.apple {
+  color: var(--color-apple-text);
+  background-color: var(--color-apple-bg);
+}
+.pill.thirdparty.apple span {
+  text-transform: capitalize;
+}
+.pill.thirdparty.github {
+  color: var(--color-github-text);
+  background-color: var(--color-github-bg);
+}
+.pill.thirdparty.github span {
+  text-transform: capitalize;
+}
+.pill.thirdparty.facebook {
+  color: var(--color-facebook-text);
+  background-color: var(--color-facebook-bg);
+}
+.pill.thirdparty.facebook span {
+  text-transform: capitalize;
+}/*# sourceMappingURL=UsersListTable.css.map */

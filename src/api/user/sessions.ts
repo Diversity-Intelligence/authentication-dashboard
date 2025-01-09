@@ -1,54 +1,58 @@
-import { SessionInfo } from "../../ui/components/userDetail/userDetailSessionList";
-import { getApiUrl, useFetchData } from "../../utils";
+import { getApiUrl, useFetchData } from 'utils';
+import { SessionInfo } from '../../ui/components/userDetail/userDetailSessionList';
 
 interface IUseSessionsForUserService {
-	getSessionsForUser: (userId: string) => Promise<SessionInfo[] | undefined>;
-	deleteSessionsForUser: (sessionHandles: string[]) => Promise<void>;
+  getSessionsForUser: (userId: string) => Promise<SessionInfo[] | undefined>;
+  deleteSessionsForUser: (sessionHandles: string[]) => Promise<void>;
 }
 
 const useSessionsForUserService = (): IUseSessionsForUserService => {
-	const fetchData = useFetchData();
+  const fetchData = useFetchData();
 
-	const getSessionsForUser = async (userId: string): Promise<SessionInfo[] | undefined> => {
-		const response = await fetchData({
-			url: getApiUrl("/api/user/sessions"),
-			method: "GET",
-			query: {
-				userId,
-			},
-		});
+  const getSessionsForUser = async (
+    userId: string,
+  ): Promise<SessionInfo[] | undefined> => {
+    const response = await fetchData({
+      url: getApiUrl('/api/user/sessions'),
+      method: 'GET',
+      query: {
+        userId,
+      },
+    });
 
-		if (response.ok) {
-			const body = await response.json();
+    if (response.ok) {
+      const body = await response.json();
 
-			if (body.status !== "OK") {
-				return undefined;
-			}
+      if (body.status !== 'OK') {
+        return undefined;
+      }
 
-			return body.sessions;
-		}
+      return body.sessions;
+    }
 
-		return undefined;
-	};
+    return undefined;
+  };
 
-	const deleteSessionsForUser = async (sessionHandles: string[]): Promise<void> => {
-		await fetchData({
-			url: getApiUrl("/api/user/sessions"),
-			method: "POST",
-			config: {
-				body: JSON.stringify({
-					sessionHandles,
-				}),
-			},
-		});
+  const deleteSessionsForUser = async (
+    sessionHandles: string[],
+  ): Promise<void> => {
+    await fetchData({
+      url: getApiUrl('/api/user/sessions'),
+      method: 'POST',
+      config: {
+        body: JSON.stringify({
+          sessionHandles,
+        }),
+      },
+    });
 
-		return;
-	};
+    return;
+  };
 
-	return {
-		getSessionsForUser,
-		deleteSessionsForUser,
-	};
+  return {
+    getSessionsForUser,
+    deleteSessionsForUser,
+  };
 };
 
 export default useSessionsForUserService;

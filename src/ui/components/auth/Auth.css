@@ -1,0 +1,162 @@
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+/* Copyright (c) 2022, VRAI Labs and/or its affiliates. All rights reserved.
+ *
+ * This software is licensed under the Apache License, Version 2.0 (the
+ * "License") as published by the Apache Software Foundation.
+ *
+ * You may not use this file except in compliance with the License. You may
+ * obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+.auth-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: var(--auth-background-portrait);
+}
+@media only screen and (min-width: 600px) {
+  .auth-container {
+    background-image: var(--auth-background);
+  }
+}
+
+.auth-container .block-container {
+  max-width: 320px;
+  margin: 32px auto;
+}
+.auth-container .block-container.sign-up, .auth-container .block-container.forgot-password {
+  max-width: 460px;
+}
+@media only screen and (min-width: 600px) {
+  .auth-container .block-container {
+    max-width: 450px;
+  }
+  .auth-container .block-container.sign-up, .auth-container .block-container.forgot-password {
+    max-width: 760px;
+    width: max(600px, 41vw);
+  }
+}
+
+.auth-container .text-title {
+  margin-bottom: 8px;
+}
+.auth-container .text-label {
+  margin-bottom: 16px;
+}
+.auth-container label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-block-end: 7px;
+  display: inline-block;
+}
+
+.block-container hr {
+  margin-block: 24px;
+  border-bottom: none;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.block-container .link {
+  color: var(--color-link);
+  cursor: pointer;
+}
+.block-container .link:hover {
+  text-decoration: underline;
+}
+
+form .input-field-inset:not(.input-field-inset-focused) input {
+  background-color: var(--color-input-unfocused);
+}
+
+.error-response-container {
+  font-size: 14px;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cta-container .secondary-cta-btn {
+  font-family: inherit;
+  font-size: 14px;
+}
+.cta-container .secondary-cta-btn.forgot-btn {
+  text-decoration: underline;
+}
+.cta-container img.back-chevron {
+  margin-inline-end: 6px;
+}
+
+.margin-top-16 {
+  margin-top: 16px;
+}
+
+.command-container {
+  margin-block: 24px 18px;
+  display: flex;
+  padding-block: 6px;
+  padding-inline: 8px 4px;
+  border: 1px solid var(--color-border-command);
+  border-radius: 6px;
+  white-space: break-spaces;
+}
+.command-container > :not(:last-child) {
+  margin-right: 12px;
+}
+.command-container .clipboard-btn-container {
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  transition: 0.1s all ease-in-out;
+  cursor: pointer;
+}
+.command-container .clipboard-btn-container:hover {
+  background: rgba(217, 217, 217, 0.6);
+}
+.command-container .clipboard-btn-container .clipboard-icon {
+  width: 12px;
+  height: 14px;
+}
+.command-container code.command {
+  word-break: break-word;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-command);
+  flex: 1;
+  max-height: 160px;
+  overflow-y: scroll;
+}
+.command-container code.command .hljs-string {
+  color: inherit;
+}
+.command-container .tooltip-container {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.command-container .tooltip-container .tooltip-container__popup {
+  padding: 3px 8px;
+}/*# sourceMappingURL=Auth.css.map */

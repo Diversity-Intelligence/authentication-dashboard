@@ -12,30 +12,29 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-
-import { parsePhoneNumber } from "libphonenumber-js/max";
-import { useAppEnvContext } from "../../contexts/AppEnvContext";
-import "./PhoneNumber.scss";
+import { parsePhoneNumber } from 'libphonenumber-js/max';
+import { useAppEnvContext } from '../../contexts/AppEnvContext';
+import './PhoneNumber.scss';
 
 export const PhoneDisplay = ({ phone }: { phone: string }) => {
-	const { isDemoConnectionURI } = useAppEnvContext();
-	if (isDemoConnectionURI) return <>{phone}</>;
-	let finalPhone = phone;
+  const { isDemoConnectionURI } = useAppEnvContext();
+  if (isDemoConnectionURI) return <>{phone}</>;
+  let finalPhone = phone;
 
-	try {
-		const parsed = parsePhoneNumber(phone) || {};
-		finalPhone = parsed.formatInternational();
-	} catch (_) {
-		// ignored
-	}
+  try {
+    const parsed = parsePhoneNumber(phone) || {};
+    finalPhone = parsed.formatInternational();
+  } catch (_) {
+    // ignored
+  }
 
-	return (
-		<>
-			<div className="phone-display">
-				<span>{finalPhone}</span>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className='phone-display'>
+        <span>{finalPhone}</span>
+      </div>
+    </>
+  );
 };
 
 export default PhoneDisplay;

@@ -1,43 +1,46 @@
-import { getApiUrl, useFetchData } from "../../utils";
+import { getApiUrl, useFetchData } from 'utils';
 
-type TDeleteUserResponse = Promise<{ status: "OK" } | undefined>;
+type TDeleteUserResponse = Promise<{ status: 'OK' } | undefined>;
 
 interface IUseDeleteUserService {
-	deleteUser: (userId: string, removeAllLinkedAccounts: boolean) => TDeleteUserResponse;
+  deleteUser: (
+    userId: string,
+    removeAllLinkedAccounts: boolean,
+  ) => TDeleteUserResponse;
 }
 
 const useDeleteUserService = (): IUseDeleteUserService => {
-	const fetchData = useFetchData();
+  const fetchData = useFetchData();
 
-	const deleteUser = async (
-		userId: string,
-		removeAllLinkedAccounts: boolean
-	): Promise<{ status: "OK" } | undefined> => {
-		const response = await fetchData({
-			url: getApiUrl("/api/user"),
-			method: "DELETE",
-			query: {
-				userId,
-				removeAllLinkedAccounts: String(removeAllLinkedAccounts),
-			},
-		});
+  const deleteUser = async (
+    userId: string,
+    removeAllLinkedAccounts: boolean,
+  ): Promise<{ status: 'OK' } | undefined> => {
+    const response = await fetchData({
+      url: getApiUrl('/api/user'),
+      method: 'DELETE',
+      query: {
+        userId,
+        removeAllLinkedAccounts: String(removeAllLinkedAccounts),
+      },
+    });
 
-		if (response.ok) {
-			const body = await response.json();
+    if (response.ok) {
+      const body = await response.json();
 
-			if (body.status !== "OK") {
-				return undefined;
-			}
+      if (body.status !== 'OK') {
+        return undefined;
+      }
 
-			return body;
-		}
+      return body;
+    }
 
-		return undefined;
-	};
+    return undefined;
+  };
 
-	return {
-		deleteUser,
-	};
+  return {
+    deleteUser,
+  };
 };
 
 export default useDeleteUserService;
